@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>School</title>
+</head>
+<body>
+    <!--MENU-->
+    <ul class="menu">
+    <li class="menuitem"><a href="index.html">Home</a></li>
+    <li class="menuitem"><a href="family.html">Family</a></li>
+    <li class="active menuitem"><a href="school.html">School</a></li>
+    <li class="menuitem"><a href="sports.html">Sports</a></li>
+    <li class="menuitem"><a href="hobbies.html">Hobbies</a></li>
+    </ul>
+    <!--MENU END-->
+
+    <h1>School</h1>
+
+    <div>
+    <h3>Elementary School:</h3>
+    <img class="schoolimage" src="https://images.squarespace-cdn.com/content/v1/59a4327f6f4ca3e5e092c400/1597759897141-K26S30H122PYZF3QC2QT/KDS_vrt-color.jpg?format=100w">
+    <p>I attended <a href="https://www.kirkdayschool.org">Kirk Day School</a> in St. Louis, Missouri from Kindergarten through sixth grade.<br></p>
+    <h3>Middle School / High School:</h3>
+    <img class="schoolimage" id="wcalogo" src="https://townandstyle.com/wp-content/uploads/2017/08/wca-logo1.png">
+    <p>I attended <a href="https://www.wcastl.org">Westminster Christian Academy</a> in St. Louis, Missouri from seventh grade through senior year of high school.<br></p>
+    <h3>College:</h3>
+    <img class="schoolimage" id="mizzoulogo" src="mizzoulogo.png">
+    <p>I currently attend the University of Missouri in Columbia, Missouri. I am studying Information Technology. My goal is to become a professional software developer and either start my own business or take over the business that my dad started. My favorite part about my schoolwork at Mizzou is the challenges that are assigned each week in my programming classes. My favorite challenge that I've done is to write a python program that takes a file from the user that has a list of stats about a cryptocurrency and returns analytics about the numbers. Here is the code for the file:<pre><code>
+    
+    <div id="codeblock">
+    def get_file():
+        filepath = input("What is the name of the file? ")
+        return filepath
+    
+    def read_data(filepath):
+        with open(filepath) as file:
+            lines = file.readlines()[1:]
+            return lines
+    
+    def create_array(lines):
+        array = []
+        for line in lines:   
+            items_list = []
+            items = line.split(",")
+            for item in items:
+                items_list.append(item)
+            array.append(items_list)
+        return array
+    
+    def get_crypto_symbol(array):
+        crypto_symbol = array[0][2]
+        return crypto_symbol
+    
+    def get_crypto_name(array):
+        crypto_name = array[0][1]
+        return crypto_name
+    
+    def get_max_closing_price(array):
+        closing_prices = []
+        for line in array:
+            closing_prices.append(line[7])
+        max_closing_price = max(closing_prices)
+        max_closing_price = float(max_closing_price)
+        return max_closing_price
+    
+    def get_max_closing_price_date(array, max_closing_price):
+         for line in array:
+             if float(line[7]) == max_closing_price:
+                 max_cp_date = line[3]
+         max_cp_date = max_cp_date[:10]
+         return max_cp_date
+    
+    def get_min_closing_price(array):
+        closing_prices = []
+        for line in array:
+            closing_prices.append(line[7])
+        min_closing_price = min(closing_prices)
+        return float(min_closing_price)
+    
+    def get_min_closing_price_date(array, min_closing_price):
+         for line in array:
+             if float(line[7]) == min_closing_price:
+                 min_cp_date = line[3]
+         min_cp_date = min_cp_date[:10]
+         return min_cp_date
+    
+    
+    def get_max_market_cap(array):
+        market_caps = []
+        for line in array:
+            market_caps.append(line[9])
+        max_market_cap = max(market_caps)
+        return float(max_market_cap)
+    
+    def get_max_market_cap_date(array, max_market_cap):
+         for line in array:
+             if float(line[9]) == max_market_cap:
+                 max_mc_date = line[3]
+         max_mc_date = max_mc_date[:10]
+         return max_mc_date
+    
+    def get_average_opening_price(array):
+        opening_prices = []
+        for line in array:
+            opening_prices.append(float(line[6]))
+        avg_opening_price = sum(opening_prices)/len(opening_prices)
+        return avg_opening_price
+        
+    def get_average_closing_price(array):
+        closing_prices = []
+        for line in array:
+            closing_prices.append(float(line[7]))
+        avg_closing_price = sum(closing_prices)/len(closing_prices)
+        return avg_closing_price
+    
+    
+    def main():
+        filepath = get_file()
+        lines = read_data(filepath)
+        array = create_array(lines)
+        max_closing_price = get_max_closing_price(array)
+        max_cp_date = get_max_closing_price_date(array, max_closing_price)
+        min_closing_price = get_min_closing_price(array)
+        min_cp_date = get_min_closing_price_date(array, min_closing_price)
+        max_market_cap = get_max_market_cap(array)
+        max_mc_date = get_max_market_cap_date(array, max_market_cap)
+        avg_opening_price = get_average_opening_price(array)
+        avg_closing_price = get_average_closing_price(array)
+        print("File Name:", filepath)
+        print("Crypto currency symbol:", get_crypto_symbol(array))
+        print("Crypto currency name:", get_crypto_name(array))
+        print("Highest closing price: $", '{:.2f}'.format(round(max_closing_price, 2)), " on ", max_cp_date, sep="")
+        print("Lowest closing price: $", '{:.2f}'.format(round(min_closing_price, 2)), " on ", min_cp_date, sep="")
+        print("Highest market cap: $", '{:.2f}'.format(round(max_market_cap, 2)), " on ", max_mc_date, sep="")
+        print("Average opening price: $", '{:.2f}'.format(round(avg_opening_price, 2)), sep="")
+        print("Average closing price: $", '{:.2f}'.format(round(avg_closing_price, 2)), sep="")
+        print("Number of entries: ", len(lines))
+    
+    
+    main()</div></code></pre></p>
+    </div>
+
+</body>
+</html>

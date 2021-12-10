@@ -1,0 +1,126 @@
+body {
+    background-color: rgb(0, 5, 71);
+    color: white;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2, h3, h4, h5, h6 {
+    text-indent: 5%;
+}
+
+a {
+    color:aqua;
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    top: 0;
+    width: 100%;
+    font-family: 'Courier New', monospace;
+  }
+  
+.menuitem {
+    float: left;
+}
+
+.mainmenu {
+    border: 1px solid #555;
+    list-style-type: none;
+    margin: 15px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.mainmenuitem {
+    text-align: center;
+    border-bottom: 1px solid #555;
+}
+
+.mainmenuitem:last-child {
+    border-bottom: none;
+}
+  
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+.active {
+    background-color: rgb(0, 133, 66);
+}
+p {
+    margin-left: 5%;
+    margin-right: 4%;
+}
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+    border: 5px solid rgb(255, 255, 255);
+      
+}
+
+#familypic {
+    width: 50%;
+}
+
+.schoolimage {
+    display: block;
+    margin-left: 5%;
+    width: 15%;
+    border: 2px solid rgb(177, 177, 177);
+}
+
+#wcalogo {
+    width: 50%;
+}
+
+#mizzoulogo {
+    border: none;
+}
+
+
+#codeblock {
+    background-color: rgb(0, 0, 0);
+}
+
+#menuphoto {
+    width: 75%;
+}
+
+#familymembers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  #familymembers td, #familymembers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  #familymembers tr:hover {background-color: rgb(0, 0, 0);}
+  
+  #familymembers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(0, 133, 66);
+    color: white;
+  }
